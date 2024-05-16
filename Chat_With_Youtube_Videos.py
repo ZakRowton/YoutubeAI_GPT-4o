@@ -15,7 +15,7 @@ default_chat_model = "gpt-4o"
 
 
 #### Transcribe Speech From MP3 File
-def trascribe_speech(filename, model = default_speech_model):
+def transcribe_speech(filename, model = default_speech_model):
     try:
         audio_file = open(filename, "rb")
         transcript = client.audio.transcriptions.create(
@@ -94,7 +94,7 @@ def main():
         question = input("Enter Your Question: ")
         download_video(url, (video_file_name + '.mp4'))
         convert_to_mp3(video_file_name)
-        transcription = trascribe_speech(audio_file_name + '.mp3')
+        transcription = transcribe_speech(audio_file_name + '.mp3')
         prompt(question, transcription)
 
         if (verbos_logging):
